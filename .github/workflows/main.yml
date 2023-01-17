@@ -4,25 +4,25 @@ on: push
 
 jobs:
 
-  build:
+    build:
   
-    runs-on: ubuntu-latest
+      runs-on: ubuntu-latest
     
-    steps:
+      steps:
     
-    - name: Checkout repo
-      uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v3
       
-    - name: Set up Python 3.10
-      uses: action/setup-python@v4
-      with:
-        python-version: "3.10"
+      - name: Set up Python 3.10
+        uses: action/setup-python@v4
+        with:
+          python-version: "3.10"
         
-    - name: Initial Python dependencies
-      run: |
-        python3 -m -pip install --upgrade pip
-        pip3 install -r requirements.txt
+      - name: Initial Python dependencies
+        run: |
+          python3 -m -pip install --upgrade pip
+          pip3 install -r requirements.txt
         
-     - name: Test with pytest
-       run: |
-         python3 -m pytest -v tests/test_factorial.py
+       - name: Test with pytest
+         run: |
+           python3 -m pytest -v tests/test_factorial.py
